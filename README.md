@@ -1,10 +1,10 @@
 # Travel Journal
 
+Simple travel blog of places I want to visit.
 
+## Preview
 
-## Available Scripts
-
-In the project directory, you can run:
+![alt text](https://github.com/n48.png "Logo Title")
 
 ### `npm start`
 
