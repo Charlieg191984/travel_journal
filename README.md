@@ -4,7 +4,7 @@ Simple travel blog of places I want to visit.
 
 ## Preview
 
-![alt text](https://github.com/n48.png "Logo Title")
+![alt text](//github.com/Charlieg191984/travel_journal/blob/master/public/project_screenshot.png "Preview Website")
 
 ### `npm start`
 
