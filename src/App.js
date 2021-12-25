@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import Card from './components/Card';
+import data from './data';
+import { useState } from "react"
 
 function App() {
+  const [blogState, setBlogState] = useState(data);
+  
+  // Update the state of favorite when click on
+  function toggleFavorite(id) {
+    setBlogState((prevState) => {
+      return prevState.map((currState) => {
+        return currState.id === id ? { ...currState, isFavorite: !currState.isFavorite } : currState 
+      })
+    })
+  }
+
+  const blogData = blogState.map(card => {
+    return <Card
+     key={card.id}
+      {...card}
+      toggle={() => toggleFavorite(card.id)}
+    />
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className="container">
+        {blogData}
+      </div>
     </div>
   );
 }
